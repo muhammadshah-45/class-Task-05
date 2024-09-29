@@ -28,6 +28,7 @@ calculateBtn.addEventListener("click",()=>{
     months--;
     days = days + new Date(todayDate.getFullYear(), todayDate.getMonth(),0).getDate()
   }
+  
 
   document.getElementById("years").innerText = years;
 })
