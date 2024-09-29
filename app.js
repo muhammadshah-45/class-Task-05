@@ -5,42 +5,20 @@ calculateBtn.addEventListener("click",()=>{
 
   var inputDate = new Date(document.getElementById("dataInput").value)
   var todayDate = new Date();
-  console.log(inputDate)
-  console.log(todayDate)
-  if(inputDate === NaN){
-    alert("Please select the date!");
-    return
-  }
+  // console.log(inputDate.getDate())
+  // console.log(todayDate)
+  
   if(inputDate >  todayDate){
     alert("Please Select your birth date");
 
     return;
   }
   
-  // Years 
-  var years = todayDate.getFullYear() - inputDate.getFullYear();
-  // console.log(years)
+  
+    document.getElementById("years").innerText = years;
+    document.getElementById("months").innerText = months;
+    document.getElementById("days").innerText = days;
+  
 
-  //Months 
-  var months = todayDate.getMonth() - inputDate.getMonth();
-
-  // Days
-  var days = todayDate.getDate() - inputDate.getDate();
-
-
-  if(days < 0 ){
-    months--;
-    days = days + new Date(todayDate.getFullYear(), todayDate.getMonth(),0).getDate();
-  }
-  if (months < 0) {  
-    years--;  
-    months += 12;  
-}  
-
-
-
-  document.getElementById("years").innerText = years;
-  document.getElementById("months").innerText = months;
-  document.getElementById("days").innerText = days;
 
 })
