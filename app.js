@@ -19,25 +19,27 @@ calculateBtn.addEventListener("click",()=>{
   
   // Years 
   var years = todayDate.getFullYear() - inputDate.getFullYear();
-  console.log(years)
+  // console.log(years)
   
   //Months 
   var months = todayDate.getMonth() - inputDate.getMonth();
-  console.log("months",months)
+  // console.log("months",months)
   
   // Days
   var days = todayDate.getDate() - inputDate.getDate();
-  console.log(days)
+  // console.log(days)
   
   
   if(days < 0 ){
     months--;
-    days = days + new Date(todayDate.getFullYear(), todayDate.getMonth()).getDate();
+    days = days + new Date(todayDate.getFullYear(), todayDate.getMonth(),0).getDate();
+    console.log("days",days)
   }
   if (months < 0) {  
     years--;  
     months += 12;  
   }  
+  // Render the data to HTML elements
     document.getElementById("years").innerText = years;
     document.getElementById("months").innerText = months;
     document.getElementById("days").innerText = days;
